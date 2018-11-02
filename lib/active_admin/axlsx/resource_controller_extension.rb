@@ -5,7 +5,7 @@ module ActiveAdmin
       def self.included(base)
         # base.send :alias_method_chain, :per_page, :xlsx
         # base.send :alias_method_chain, :index, :xlsx
-        base.preprend(ResourceControllerExtension)
+        base.prepend(ResourceControllerExtension)
         base.send :respond_to, :xlsx
       end
 

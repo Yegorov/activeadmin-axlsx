@@ -11,7 +11,7 @@ module ActiveAdmin
 
       # patching the index method to allow the xlsx format.
       def index(&block)
-        index_without_xlsx do |format|
+        super do |format|
            format.xlsx do
             xlsx = active_admin_config.xlsx_builder.serialize(collection)
             send_data xlsx, :filename => "#{xlsx_filename}", :type => Mime::Type.lookup_by_extension(:xlsx)
